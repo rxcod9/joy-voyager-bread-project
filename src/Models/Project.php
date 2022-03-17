@@ -1,18 +1,18 @@
 <?php
 
-namespace Joy\VoyagerBreadReplaceKeyword\Models;
+namespace Joy\VoyagerBreadProject\Models;
 
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Support\Facades\Auth;
-use Joy\VoyagerBreadReplaceKeyword\Database\Factories\ReplaceKeywordFactory;
+use Joy\VoyagerBreadProject\Database\Factories\ProjectFactory;
 use TCG\Voyager\Facades\Voyager;
 use TCG\Voyager\Traits\Resizable;
 use TCG\Voyager\Traits\Translatable;
 
-class ReplaceKeyword extends Model
+class Project extends Model
 {
     use HasFactory;
     use Notifiable;
@@ -97,7 +97,7 @@ class ReplaceKeyword extends Model
      */
     public function parent()
     {
-        return $this->belongsTo(Voyager::modelClass('ReplaceKeyword'));
+        return $this->belongsTo(Voyager::modelClass('Project'));
     }
 
     /**
@@ -107,6 +107,6 @@ class ReplaceKeyword extends Model
      */
     protected static function newFactory()
     {
-        return new ReplaceKeywordFactory();
+        return new ProjectFactory();
     }
 }
